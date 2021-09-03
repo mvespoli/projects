@@ -21,7 +21,7 @@ def myFunction():
         print("Hola! QuÃ© tal!")
         print("My name is Brandon and I necesito mas agua")
         print("I am the breaker of doors and the lover of couches")
-#Brandon True False
+#Brandon True False?
     elif character_name == 'Brandon' and character_age != '25':
         print("Hey cringe nerd! You're not " + character_age + ". Do you think this is a game?")
         print("Do they count different in Mexico?")
