@@ -19,13 +19,13 @@ def solution(string,markers):
             output += i.strip()
         else:
             output += i.strip() + "\n"
+        if output == "\n":
+            output = ""
     print(output)
     return output
 
 
 
- if output == "\n":
-        output = ""
     # Gstring = ""
     # for i in markers:
     #     if Gstring == '':
