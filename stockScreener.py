@@ -10,9 +10,9 @@ import time
 yf.pdr_override()
 
 #Variables
-tickers = si.tickers_sp500()
+tickers = si.tickers_nasdaq()
 tickers = [item.replace(".", "-") for item in tickers] # Yahoo Finance uses dashes instead of dots
-index_name = '^GSPC' # S&P 500
+index_name = '^IXIC' # NASDAQ
 start_date = datetime.datetime.now() - datetime.timedelta(days=365)
 end_date = datetime.date.today()
 exportList = pd.DataFrame(columns=['Stock', "RS_Rating", "50 Day MA", "150 Day Ma", "200 Day MA", "52 Week Low", "52 week High"])
@@ -29,7 +29,7 @@ for ticker in tickers:
     df.to_csv(f'{ticker}.csv') #download historical data to csv
 
     #calculate returns relative to market (S&P 500)
-    df["Percentage Change"] = df['Adj Close'].pct_change()
+    df['Percent Change'] = df['Adj Close'].pct_change()
     stock_return = (df['Percent Change'] + 1).cumprod()[-1]
     returns_multiple = round((stock_return / index_return), 2)
     returns_multiples.extend([returns_multiple])
