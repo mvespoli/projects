@@ -5,7 +5,7 @@ class RomanNumerals:
         newVal = str(val)
         for i in str(val):
             if len(newVal) == 4:
-               romanToNumbers *= romanNumbersDictionary[(i*)]
+             
                 newVal = newVal[1:]
                 print(newVal)
             if len(newVal) == 3:
