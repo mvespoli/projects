@@ -9,7 +9,8 @@ import time
 yf.pdr_override()
 
 # Variables
-tickers = si.tickers_nifty50
+tickers = si.tickers_nasdaq()
+print(tickers)
 tickers = [item.replace(".", "-") for item in tickers] # Yahoo Finance uses dashes instead of dots
 index_name = '^IXIC' # S&P 500
 start_date = datetime.datetime.now() - datetime.timedelta(days=365)
@@ -76,13 +77,13 @@ for stock in rs_stocks:
         
         # Condition 4: 50 SMA> 150 SMA and 50 SMA> 200 SMA
         condition_4 = moving_average_50 > moving_average_150 > moving_average_200
-
+           
         # Condition 5: Current Price > 50 SMA
         condition_5 = currentClose > moving_average_50
-
+           
         # Condition 6: Current Price is at least 30% above 52 week low
         condition_6 = currentClose >= (1.3*low_of_52week)
-
+           
         # Condition 7: Current Price is within 25% of 52 week high
         condition_7 = currentClose >= (.75*high_of_52week)
         
@@ -95,7 +96,6 @@ for stock in rs_stocks:
         print(f"Could not gather data on {stock}")
 
 exportList = exportList.sort_values(by='RS_Rating', ascending=False)
-
 print('\n', exportList)
 writer = ExcelWriter("ScreenOutput.xlsx")
 exportList.to_excel(writer, "Sheet1")
