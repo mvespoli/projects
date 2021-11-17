@@ -20,4 +20,4 @@ def pig_it(text):
     return newArray.strip()
     
     
-pig_it('sample text')
+pig_it('sample text here')
