@@ -1,4 +1,5 @@
 def pig_it(text):
+#Turns text into pig latin
     wordsArray = text.split(' ')
     newArray = ""
     print (wordsArray)
