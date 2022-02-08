@@ -1,6 +1,5 @@
 def compare(pizza):
     for i in pizza[0:-1]:    
-        print(i)
         if pizza[pizza.index(i)+1] > i:
             print(str(pizza[pizza.index(i)+1]) + " is greater than " + str(i))
         elif pizza[pizza.index(i)+1] < i:
