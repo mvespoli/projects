@@ -68,7 +68,6 @@ def rot13(message):
         else:
             text += i
     print(text)
-
     return text
 
 
